@@ -94,10 +94,19 @@ body {
 }
 
 .footer-container {
+    position: relative;
+    overflow-y: hidden;
+}
+
+.standard-mobile {
+    padding: 2rem 2.8rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    flex-grow: 1;
+}
+
+.standard-desktop {
+    display: none;
 }
 
 .author-container {
@@ -121,11 +130,60 @@ body {
     align-items: center;
     justify-content: center;
     padding-left: .1rem;
+    cursor: pointer;
 }
 
 .share-icon img {
     height: 50%;
     width: 50%;
+}
+
+
+.share-box {
+    display: flex;
+    background-color: var(--dark-grayish-blue);
+    padding: 1.4rem 2.4rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+    justify-content: space-between;
+    align-items: center;
+    transition: bottom .25s;
+    bottom: -100%;
+}
+
+.share-box.show {
+    bottom: 0;
+}
+
+.share-box .share-icon {
+    background-color: var(--destaurated-dark-blue);
+}
+
+.share-box .share-icon img {
+    filter: brightness(0) invert(1);
+}
+
+
+.share-box h5 {
+    letter-spacing: .6rem;
+    text-transform: uppercase;
+    color: var(--grayish-blue);
+    align-self: center;
+    font-size: 1.3rem;
+}
+
+.share-box .left {
+    display: flex;
+    gap: 1.4rem;
+}
+
+.share-box .left img {
+    height: 2rem;
+    width: 2rem;
+    align-self: center;
 }
 
 /* ! Responsive */
@@ -155,5 +213,46 @@ body {
     .card-content {
         font-size: 1.3rem;
         padding: 2.4rem;
+    }
+
+    .footer-container {
+        display: none;
+    }
+
+    .standard-desktop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    
+    .share-box-desktop {
+        position: absolute;
+        width: 50%;
+        top: -200%;
+        border-top-left-radius: 1.2rem;
+        border-top-right-radius: 1.2rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .25s;
+    }
+
+    .share-box-desktop::after {
+        content: "";
+        position: absolute;
+        height: 1rem;
+        left: 50%;
+        background-color: var(--dark-grayish-blue);
+        bottom: -1rem;
+        transform: translateX(-50%);
+        width: 10%;
+        height: 1rem;
+        clip-path: polygon(50% 100%, 0 0, 100% 0);
+    }
+
+    .share-box-desktop.show {
+        visibility: visible;
+        opacity: 1;
     }
 }
