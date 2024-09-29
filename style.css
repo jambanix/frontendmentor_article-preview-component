@@ -91,6 +91,7 @@ body {
 
 .card-content p {
     color: var(--destaurated-dark-blue);
+    line-height: 180%;
 }
 
 .footer-container {
@@ -113,6 +114,14 @@ body {
     display: flex;
     gap: 1.2rem;
     align-items: center;
+}
+
+.author-container h5 {
+    color: var(--dark-grayish-blue);
+}
+
+.author-container p {
+    color: var(--destaurated-dark-blue);
 }
 
 .author-avatar {
@@ -229,10 +238,11 @@ body {
     
     .share-box-desktop {
         position: absolute;
-        width: 50%;
+        width: 55%;
         top: -200%;
         border-top-left-radius: 1.2rem;
         border-top-right-radius: 1.2rem;
+        justify-content: center;
         opacity: 0;
         visibility: hidden;
         transition: all .25s;
@@ -254,5 +264,13 @@ body {
     .share-box-desktop.show {
         visibility: visible;
         opacity: 1;
+    }
+
+    .share-icon.active {
+        background-color: var(--dark-grayish-blue);
+    }
+
+    .share-icon .share.active {
+        filter: brightness(0) invert(1);
     }
 }

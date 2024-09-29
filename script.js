@@ -13,5 +13,7 @@ shareIconsMobile.forEach(icon => {
 
 shareIconDesktop.addEventListener("click", () => {
     shareBoxDesktop.classList.toggle("show");
+    shareIconDesktop.classList.toggle("active");
+    shareIconDesktop.querySelector(".share").classList.toggle("active");
 });
 
