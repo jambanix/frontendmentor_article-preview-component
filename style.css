@@ -206,10 +206,10 @@ body {
 
 @media (min-width: 1080px) {
     .card {
-        height: 28rem;
+        height: 28.7rem;
         width: 73rem;
         max-width: 73rem;
-        max-height: 28rem;
+        max-height: 28.7rem;
         grid-template-columns: 35% 1fr;
         grid-template-rows: 1fr;
     }
